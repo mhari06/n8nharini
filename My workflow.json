@@ -1,0 +1,111 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d00c2d8c-8d74-424d-8f03-8686d88fdd40",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "sendTo": "p7754340@gmail.com",
+        "subject": "What are you doing?",
+        "emailType": "text",
+        "message": "saptiya yen priya eppadi irukka ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "09f0f149-d79f-4bc6-aa5f-4e62fae0521c",
+      "name": "Send a message",
+      "webhookId": "38e82601-9419-4fd3-8e67-24196ed6e4ae",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "pMvTzWtfmsEoWXac",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 16,
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        448,
+        0
+      ],
+      "id": "bcd9bfbf-a172-4af2-b13f-7569f43358c8",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {
+    "Schedule Trigger": [
+      {
+        "json": {
+          "timestamp": "2026-10-06T05:41:13.402-04:00",
+          "Readable date": "October 6th 2026, 5:41:13 am",
+          "Readable time": "5:41:13 am",
+          "Day of week": "Tuesday",
+          "Year": "2026",
+          "Month": "October",
+          "Day of month": "06",
+          "Hour": "05",
+          "Minute": "41",
+          "Second": "13",
+          "Timezone": "America/New_York (UTC-04:00)"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "d16d31ed-7bdd-4524-8e09-bdbe4873bdf2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "156076cb2c30b2a7e31bea67f7569b051863523bf7780d999d1e4714f45fa965"
+  },
+  "nodeGroups": [],
+  "id": "T94w9CQpzbmEkjZJ",
+  "tags": []
+}
